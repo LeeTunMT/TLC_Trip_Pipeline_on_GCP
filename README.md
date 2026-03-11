@@ -25,7 +25,7 @@ Yellow and green taxi trip records include fields capturing pick-up and drop-off
 More info about dataset can be found here: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
 
 ## Data Model
-<img src="schema_data.jpeg">
+<img src="schema_data.png">
 
 ## More Informations
 The file commands_work_with_ssh.txt contain turtorial and note about how to work on SSH of VM and somethings we need to do when interact with GCP.
