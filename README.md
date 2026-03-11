@@ -30,3 +30,5 @@ More info about dataset can be found here: https://www.nyc.gov/site/tlc/about/tl
 ## More Informations
 The file commands_work_with_ssh.txt contain turtorial and note about how to work on SSH of VM and somethings we need to do when interact with GCP.
 
+The brief report on Looker studio, you can refer here: 
+https://lookerstudio.google.com/reporting/970e0afa-783d-4792-8637-950a21bde0c6
