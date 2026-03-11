@@ -1,0 +1,60 @@
+# 1. Cập nhật hệ thống và cài đặt Python
+# Cập nhật danh sách gói
+sudo apt-get update -y
+
+# Cài đặt Python3, Pip và các công cụ hỗ trợ
+sudo apt-get install -y python3 python3-pip python3-venv wget
+
+# 2. Thiết lập Virtual Environment
+# Tạo môi trường ảo tên là 'mage-env'
+python3 -m venv mage-env
+
+# Kích hoạt môi trường ảo
+source mage-env/bin/activate
+
+# 3. Cài đặt Mage và các thư viện 
+# Cập nhật pip lên bản mới nhất trong venv
+pip install --upgrade pip
+
+# Tải các gói trong file requirements
+nano requirements.txt
+
+# then paste requirements below, -> ^O -> ^X
+pip install -r requirements.txt --force-reinstall
+
+# Final
+mage start [my_project_name] (ex: mage start tlc_project) 
+
+##################################################################
+Truy cập http://<external-ip>:6789
+(nếu không truy cập được thì vào cấp quyền firewall rồi truy cập lại)
+
+Nếu yêu cầu TK-MK thì nhập mặc định khởi tạo của Mage:
+Email: admin@admin.com
+Password: admin
+
+##################################################################
+Đinh nghĩa: 
+Service Account:
+IAM & Admin (identify and management):
+Firewall:
+
+Lưu ý:
+- Khi setup dataset của GCS là "Not public" thì cần Cấp quyền truy cập
+cho VM (cụ thể là Service Account cấp cho VM) 
+bằng cách vào Permissions -> Grant access -> Add roles
+
+- Để truy cập một dịch vụ bên ngoài thông qua VM thì cần mở cổng kết nối
+bằng cách vào Firewall -> Create a firewall rule -> setup 
+Ex: cần truy cập Mage UI thì truy cập link http://<external-ip>:6789
+thì trong GCP không có mở sẵn cổng nên phải tạo giao thức kết nối với 
+cổng 6789 (port của mage-ai) này.
+
+- Khi tạo một VM instance thì bên cạnh set việc setup ram,disk còn phải
+setup Firewall, đặc biệt là chọn Service accounts và setup Access scopes (
+Allow full access to all Cloud APIs)
+
+
+
+
+
